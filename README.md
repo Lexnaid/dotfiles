@@ -14,7 +14,7 @@ Configuraciones personales para desarrollo.
 ## Instalación
 
 ```bash
-git clone https://github.com/tuusuario/dotfiles.git ~/dotfiles
+git clone https://github.com/Lexnaid/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 chmod +x install.sh
 ./install.sh
