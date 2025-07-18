@@ -101,11 +101,19 @@ if [[ -d "$DOTFILES_DIR/gh" ]]; then
     echo -e "${GREEN}✓ Configuración de GitHub CLI copiada${NC}"
 fi
 
+echo -e "\n🖥️  Configurando WezTerm..."
+if [[ -d "$DOTFILES_DIR/wezterm" ]]; then
+    mkdir -p "$HOME/.config/wezterm"
+    cp -r "$DOTFILES_DIR/wezterm"/* "$HOME/.config/wezterm/"
+    echo -e "${GREEN}✓ Configuración de WezTerm copiada${NC}"
+fi
+
 echo -e "\n${GREEN}✅ Instalación completada!${NC}"
 echo -e "\nPara aplicar los cambios:"
-echo -e "  • Reinicia tu terminal o ejecuta: source ~/.bashrc (o ~/.zshrc)"
-echo -e "  • Para tmux: tmux source-file ~/.tmux.conf"
-echo -e "  • Para nvim: Los cambios se aplicarán al reiniciar"
+echo -e "  - Reinicia tu terminal o ejecuta: source ~/.bashrc (o ~/.zshrc)"
+echo -e "  - Para tmux: tmux source-file ~/.tmux.conf"
+echo -e "  - Para nvim: Los cambios se aplicarán al reiniciar"
+echo -e "  - Wezterm deberia actualizarse por su cuenta"
 
 # Verificar instalaciones
 echo -e "\n🔍 Verificando instalaciones..."
@@ -114,6 +122,7 @@ command -v tmux >/dev/null 2>&1 && echo -e "${GREEN}✓ Tmux instalado${NC}" || 
 command -v git >/dev/null 2>&1 && echo -e "${GREEN}✓ Git instalado${NC}" || echo -e "${RED}✗ Git no encontrado${NC}"
 command -v starship >/dev/null 2>&1 && echo -e "${GREEN}✓ Starship instalado${NC}" || echo -e "${RED}✗ Starship no encontrado${NC}"
 command -v gh >/dev/null 2>&1 && echo -e "${GREEN}✓ GitHub CLI instalado${NC}" || echo -e "${RED}✗ GitHub CLI no encontrado${NC}"
+command -v wezterm >/dev/null 2>&1 && echo -e "${GREEN} Wezterm instalado${NC}" || echo -e "${RED}x Wezterm no encontrado ${NC}"                        
 
 # Verificar GitHub Copilot
 if [[ -f "$HOME/.config/github-copilot/apps.json" ]]; then

@@ -18,3 +18,8 @@ vim.api.nvim_set_hl(0, "CopilotSuggestion", {
   fg = "#6b7280", -- Color gris sutil
   italic = true,
 })
+
+-- Pedir sudo cuando sea necesario.
+vim.api.nvim_create_user_command('W', 'w !sudo tee % > /dev/null', {})
+
+
