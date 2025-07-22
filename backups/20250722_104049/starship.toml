@@ -1,0 +1,360 @@
+format = """
+$username\
+$git_branch\
+$git_status\
+$directory\
+$python\
+$lua\
+$golang\
+$haskell\
+$rust\
+$ruby\
+$c\
+$java\
+$nodejs\
+$php\
+$scala\
+$kotlin\
+$swift\
+$zig\
+$dart\
+$elixir\
+$elm\
+$erlang\
+$julia\
+$nim\
+$ocaml\
+$perl\
+$raku\
+$red\
+$vlang\
+$opa\
+$purescript\
+$typst\
+$solidity\
+$terraform\
+$helm\
+$aws\
+$gcloud\
+$azure\
+$jobs\
+$docker_context\
+$kubernetes\
+$fill\
+$os\
+$env_var\
+$memory_usage\
+$cmd_duration\
+$time\
+$line_break\
+$character"""
+
+
+
+[username]
+style_user = 'fg:blue bold'
+style_root = 'fg:red bold'
+format = '[$user]($style) '
+disabled = false
+show_always = true
+
+[directory]
+style = 'fg:cyan bold'
+format = '[$path]($style)[$read_only]($read_only_style) '
+truncation_length = 3
+truncation_symbol = '…/'
+read_only = ' 󰌾'
+
+[time]
+style = 'fg:purple bold'
+disabled = false
+
+
+[directory.substitutions]
+'Documents' = '󰈙'
+'Downloads' = '󰇚'
+'Music' = '󰝚'
+'Pictures' = '󰋩'
+'Videos' = '󰕧'
+'Desktop' = '󰇄'
+'Projects' = '󰲋'
+'Code' = '󰨞'
+'.config' = '󰒓'
+'Home' = '󰋜'
+
+[git_branch]
+style = 'fg:green'
+symbol = '󰊢'
+format = '[on](white) [$symbol$branch ]($style)'
+
+[git_status]
+style = 'fg:red'
+format = '([$all_status$ahead_behind]($style) )'
+
+[fill]
+symbol = ' '
+
+[python]
+style = 'teal'
+symbol = ' 󰌠 '
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+pyenv_version_name = true
+pyenv_prefix = ''
+
+[lua]
+style = 'blue'
+format = '[$symbol($version )]($style)'
+symbol = '󰢱 '
+
+[golang]
+style = 'blue'
+symbol = '󰟓 '
+format = '[$symbol($version )]($style)'
+
+[haskell]
+style = 'purple'
+symbol = '󰲒 '
+format = '[$symbol($version )]($style)'
+
+[rust]
+style = 'orange'
+symbol = '󱘗 '
+format = '[$symbol($version )]($style)'
+
+[ruby]
+style = 'red'
+symbol = '󰴭 '
+format = '[$symbol($version )]($style)'
+
+[c]
+style = 'blue'
+symbol = '󰙱 '
+format = '[$symbol($version )]($style)'
+
+[java]
+style = 'red'
+symbol = '󰬷 '
+format = '[$symbol($version )]($style)'
+
+[nodejs]
+style = 'green'
+symbol = '󰎙 '
+format = '[$symbol($version )]($style)'
+
+[php]
+style = 'purple'
+symbol = '󰌟 '
+format = '[$symbol($version )]($style)'
+
+[scala]
+style = 'red'
+symbol = '󰲓 '
+format = '[$symbol($version )]($style)'
+
+[kotlin]
+style = 'blue'
+symbol = '󱈙 '
+format = '[$symbol($version )]($style)'
+
+[swift]
+style = 'orange'
+symbol = '󰛥 '
+format = '[$symbol($version )]($style)'
+
+[zig]
+style = 'yellow'
+symbol = '󰟙 '
+format = '[$symbol($version )]($style)'
+
+[dart]
+style = 'blue'
+symbol = '󰍃 '
+format = '[$symbol($version )]($style)'
+
+[elixir]
+style = 'purple'
+symbol = '󰍌 '
+format = '[$symbol($version )]($style)'
+
+[elm]
+style = 'cyan'
+symbol = '󰻈 '
+format = '[$symbol($version )]($style)'
+
+[erlang]
+style = 'red'
+symbol = '󰟏 '
+format = '[$symbol($version )]($style)'
+
+[julia]
+style = 'purple'
+symbol = '󰍎 '
+format = '[$symbol($version )]($style)'
+
+[nim]
+style = 'yellow'
+symbol = '󰆥 '
+format = '[$symbol($version )]($style)'
+
+[ocaml]
+style = 'orange'
+symbol = '󰘧 '
+format = '[$symbol($version )]($style)'
+
+[perl]
+style = 'blue'
+symbol = '󰌟 '
+format = '[$symbol($version )]($style)'
+
+[raku]
+style = 'purple'
+symbol = '󱖪 '
+format = '[$symbol($version )]($style)'
+
+[red]
+style = 'red'
+symbol = '󱘓 '
+format = '[$symbol($version )]($style)'
+
+[vlang]
+style = 'blue'
+symbol = '󰍛 '
+format = '[$symbol($version )]($style)'
+
+[opa]
+style = 'blue'
+symbol = '󰩃 '
+format = '[$symbol($version )]($style)'
+
+[purescript]
+style = 'white'
+symbol = '󰣼 '
+format = '[$symbol($version )]($style)'
+
+[typst]
+style = 'blue'
+symbol = '󰼭 '
+format = '[$symbol($version )]($style)'
+
+[solidity]
+style = 'blue'
+symbol = '󰧚 '
+format = '[$symbol($version )]($style)'
+
+[terraform]
+style = 'purple'
+symbol = '󱁢 '
+format = '[$symbol$workspace ]($style)'
+
+[helm]
+style = 'blue'
+symbol = '󰠳 '
+format = '[$symbol($version )]($style)'
+
+[package]
+symbol = '󰏗 '
+style = 'cyan'
+format = '[$symbol$version ]($style)'
+
+[aws]
+symbol = '󰸏 '
+style = 'yellow'
+format = '[$symbol($profile )(\[$duration\] )]($style)'
+
+[gcloud]
+symbol = '󱇶 '
+style = 'blue'
+format = '[$symbol($account(@$domain)(\($project\)) )]($style)'
+
+[azure]
+symbol = '󰠅 '
+style = 'blue'
+format = '[$symbol($subscription )]($style)'
+
+[docker_context]
+symbol = '󰡨 '
+style = 'fg:#06969A'
+format = '[$symbol$context ]($style)'
+detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
+detect_extensions = ['Dockerfile']
+
+[kubernetes]
+symbol = '󱃾 '
+style = 'cyan'
+format = '[$symbol$context( \($namespace\)) ]($style)'
+disabled = false
+
+[jobs]
+symbol = '󰜎 '
+style = 'red'
+number_threshold = 1
+format = '[$symbol$number ]($style)'
+
+[os]
+style = 'bold white'
+disabled = false
+
+[os.symbols]
+Alpine = '󰕄 '
+Amazon = '󰸏 '
+Android = '󰀲 '
+Arch = '󰣇 '
+CentOS = '󱄅 '
+Debian = '󰣚'
+DragonFly = '󰣞'
+Emscripten = '󰆉'
+EndeavourOS = '󰂪'
+Fedora = '󰣛'
+FreeBSD = '󰣠 '
+Garuda = '󰛓'
+Gentoo = '󰣨'
+HardenedBSD = '󰞌'
+Illumos = '󰈸'
+Linux = '󰌽'
+Macos = '󰀵 '
+Manjaro = '󱘊'
+Mariner = '󰠳'
+MidnightBSD = '󰧵'
+Mint = '󰣭'
+NetBSD = '󰣡'
+NixOS = '󱄅'
+OpenBSD = '󰈺'
+openSUSE = '󰆷'
+OracleLinux = '󰌷'
+Pop = '󰟈'
+Raspbian = '󰐿'
+Redhat = '󱄮'
+RedHatEnterprise = '󱄮'
+Redox = '󰀘 '
+Solus = '󰠳'
+SUSE = '󰆷'
+Ubuntu = '󰕈 '
+Unknown = '󰠥'
+Windows = '󰍲 '
+
+[memory_usage]
+disabled = false
+threshold = 30
+symbol = '󰍛 '
+style = 'bold dimmed yellow'
+format = '$symbol[${ram}( | ${swap})]($style) '
+
+[cmd_duration]
+min_time = 500
+style = 'fg:gray'
+format = '[$duration]($style) '
+
+[env_var]
+variable = 'SHELL'
+default = 'unknown shell'
+symbol = ' 󰆍 '
+style = 'dimmed green'
+format = '[$symbol ]($style)'
+
+[character]
+success_symbol = '[❯](bold green)'
+error_symbol = '[❯](bold red)'
+vimcmd_symbol = '[❮](bold yellow)'
+
+[line_break]
+disabled = false

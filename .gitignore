@@ -1,0 +1,11 @@
+# Sensitive configuration files
+gh/hosts.yml
+github-copilot/apps.json
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Backup files
+*.backup.*
