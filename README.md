@@ -52,17 +52,6 @@ vim.call('plug#end')
 
 Luego ejecuta `:PlugInstall` y `:Copilot setup` en Neovim.
 
-
-# Securing Dotfiles with Environment Variables
-
-## Current Security Issues
-
-Your repository contains exposed OAuth tokens in:
-- `gh/hosts.yml` - GitHub CLI OAuth token
-- `github-copilot/apps.json` - GitHub Copilot OAuth token
-
-## Solution: Environment Variables + Template Files
-
 ### Step 1: Create Template Files
 
 Replace sensitive files with template versions:
@@ -262,33 +251,6 @@ clean-secrets:
 	@echo "⚠️  Run 'git push --force' to update remote repository"
 ```
 
-### Step 7: Update README.md
-
-Add to your README.md:
-
-```markdown
-## Initial Setup
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/dotfiles.git ~/dotfiles
-   cd ~/dotfiles
-   ```
-
-2. Set up environment variables:
-   ```bash
-   make setup-env
-   # Edit .env with your actual values
-   nano .env
-   ```
-
-3. Install dotfiles:
-   ```bash
-   make install
-   ```
-
-## Environment Variables
-
 Copy `.env.example` to `.env` and configure:
 
 - `GITHUB_USERNAME`: Your GitHub username
@@ -325,8 +287,6 @@ Copy `.env.example` to `.env` and configure:
    ```bash
    make install
    ```
-
-This approach ensures your sensitive tokens are never committed to git while maintaining the functionality of your dotfiles across different machines.
 
 
 
