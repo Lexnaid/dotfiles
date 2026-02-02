@@ -1,6 +1,7 @@
 local wezterm = require 'wezterm'
 
-config = wezterm.config_builder()
+local config = wezterm.config_builder()
+local home = os.getenv("HOME")
 
 config = {
     default_prog = { 'bash','-l','-c','clear; exec bash' },
@@ -27,7 +28,7 @@ config = {
     background = {
         { 
             source = {
-                File = '/home/Lexnaid/personal/Pictures/original-wallpaper.jpg',
+                File = home .. '/Pictures/NebulaCity.jpg',
             },
             hsb = {
                 hue = 1.0,
