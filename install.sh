@@ -108,6 +108,15 @@ if [[ -f "$DOTFILES_DIR/fish/config.fish" ]]; then
     echo -e "${GREEN}✓ Fish configured${NC}"
 fi
 
+# Hyprland configuration
+echo -e "\n🪟 Configuring Hyprland..."
+if [[ -d "$DOTFILES_DIR/hypr" ]]; then
+    backup_if_exists "$HOME/.config/hypr"
+    mkdir -p "$HOME/.config"
+    ln -sf "$DOTFILES_DIR/hypr" "$HOME/.config/hypr"
+    echo -e "${GREEN}✓ Hyprland configured${NC}"
+fi
+
 # Git configuration
 echo -e "\n🌿 Configuring Git..."
 if [[ -f "$DOTFILES_DIR/git/.gitconfig.template" ]]; then
@@ -155,6 +164,36 @@ if [[ -d "$DOTFILES_DIR/github-copilot" ]]; then
     fi
 
     echo -e "${GREEN}✓ GitHub Copilot configured${NC}"
+fi
+
+# GTK configuration
+echo -e "\n🎨 Configuring GTK..."
+if [[ -f "$DOTFILES_DIR/gtk-3.0/settings.ini" ]]; then
+    backup_if_exists "$HOME/.config/gtk-3.0/settings.ini"
+    mkdir -p "$HOME/.config/gtk-3.0"
+    ln -sf "$DOTFILES_DIR/gtk-3.0/settings.ini" "$HOME/.config/gtk-3.0/settings.ini"
+    echo -e "${GREEN}✓ GTK 3.0 configured${NC}"
+fi
+if [[ -f "$DOTFILES_DIR/gtk-4.0/settings.ini" ]]; then
+    backup_if_exists "$HOME/.config/gtk-4.0/settings.ini"
+    mkdir -p "$HOME/.config/gtk-4.0"
+    ln -sf "$DOTFILES_DIR/gtk-4.0/settings.ini" "$HOME/.config/gtk-4.0/settings.ini"
+    echo -e "${GREEN}✓ GTK 4.0 configured${NC}"
+fi
+
+# Caelestia templates
+echo -e "\n🌙 Configuring Caelestia templates..."
+if [[ -d "$DOTFILES_DIR/caelestia/templates" ]]; then
+    backup_if_exists "$HOME/.config/caelestia/templates"
+    mkdir -p "$HOME/.config/caelestia"
+    ln -sf "$DOTFILES_DIR/caelestia/templates" "$HOME/.config/caelestia/templates"
+    echo -e "${GREEN}✓ Caelestia templates configured${NC}"
+
+    # Regenerate theme files
+    if command -v caelestia &> /dev/null; then
+        echo -e "${YELLOW}⚡ Regenerating Caelestia theme...${NC}"
+        caelestia scheme set --variant tonalspot 2>/dev/null || true
+    fi
 fi
 
 echo -e "\n${GREEN}✅ Dotfiles installation complete!${NC}"
