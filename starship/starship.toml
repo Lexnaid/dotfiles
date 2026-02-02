@@ -32,17 +32,9 @@ $opa\
 $purescript\
 $typst\
 $solidity\
-$terraform\
-$helm\
-$aws\
-$gcloud\
-$azure\
 $jobs\
-$docker_context\
-$kubernetes\
 $fill\
 $os\
-$env_var\
 $memory_usage\
 $cmd_duration\
 $time\
