@@ -99,6 +99,15 @@ if [[ -f "$DOTFILES_DIR/kitty/kitty.conf" ]]; then
     echo -e "${GREEN}✓ Kitty configured${NC}"
 fi
 
+# Fish shell configuration
+echo -e "\n🐟 Configuring Fish..."
+if [[ -f "$DOTFILES_DIR/fish/config.fish" ]]; then
+    backup_if_exists "$HOME/.config/fish"
+    mkdir -p "$HOME/.config/fish"
+    ln -sf "$DOTFILES_DIR/fish/config.fish" "$HOME/.config/fish/config.fish"
+    echo -e "${GREEN}✓ Fish configured${NC}"
+fi
+
 # Git configuration
 echo -e "\n🌿 Configuring Git..."
 if [[ -f "$DOTFILES_DIR/git/.gitconfig.template" ]]; then

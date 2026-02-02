@@ -9,3 +9,4 @@ github-copilot/apps.json
 
 # Backup files
 *.backup.*
+backups/

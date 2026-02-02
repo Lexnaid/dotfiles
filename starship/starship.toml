@@ -46,7 +46,7 @@ $character"""
 [username]
 style_user = 'fg:blue bold'
 style_root = 'fg:red bold'
-format = '[$user]($style) '
+format = '[lexnaid]($style) '
 disabled = false
 show_always = true
 
@@ -284,7 +284,7 @@ format = '[$symbol$number ]($style)'
 
 [os]
 style = 'bold white'
-disabled = false
+disabled = true
 
 [os.symbols]
 Alpine = '󰕄 '
@@ -325,7 +325,7 @@ Unknown = '󰠥'
 Windows = '󰍲 '
 
 [memory_usage]
-disabled = false
+disabled = true
 threshold = 30
 symbol = '󰍛 '
 style = 'bold dimmed yellow'

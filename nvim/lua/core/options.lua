@@ -22,6 +22,7 @@ vim.o.undolevels = 1000 -- Number of undos to keeping
 vim.o.undoreload = 10000 -- Number of lines to keep in the undo history 
 vim.o.scrolloff = 8 -- Keep 8 lines above/below the cursor
 vim.o.sidescrolloff = 8 -- Keep 8 columns to the left/right of the cursor
+vim.opt.fillchars:append({ eob = " " }) -- Hide ~ end of buffer markers
 
 vim.opt.updatetime = 250 -- Respuesta más rápida
 vim.opt.timeoutlen = 300 -- Timeout para keymaps
