@@ -114,6 +114,21 @@ if [[ -d "$DOTFILES_DIR/hypr" ]]; then
     backup_if_exists "$HOME/.config/hypr"
     mkdir -p "$HOME/.config"
     ln -sf "$DOTFILES_DIR/hypr" "$HOME/.config/hypr"
+
+    # Set up host-specific config based on hostname
+    HOSTNAME=$(hostname)
+    HOST_CONFIG="$DOTFILES_DIR/hypr/hosts/$HOSTNAME.conf"
+    HOST_LINK="$HOME/.config/hypr/hosts/current.conf"
+
+    if [[ -f "$HOST_CONFIG" ]]; then
+        ln -sf "$HOST_CONFIG" "$HOST_LINK"
+        echo -e "${GREEN}✓ Host config linked: $HOSTNAME.conf${NC}"
+    else
+        ln -sf "$DOTFILES_DIR/hypr/hosts/default.conf" "$HOST_LINK"
+        echo -e "${YELLOW}⚠ No host config for '$HOSTNAME', using default${NC}"
+        echo -e "${YELLOW}  Create $DOTFILES_DIR/hypr/hosts/$HOSTNAME.conf for custom settings${NC}"
+    fi
+
     echo -e "${GREEN}✓ Hyprland configured${NC}"
 fi
 

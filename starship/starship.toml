@@ -1,8 +1,7 @@
 format = """
-$username\
+$directory\
 $git_branch\
 $git_status\
-$directory\
 $python\
 $lua\
 $golang\
@@ -33,26 +32,18 @@ $purescript\
 $typst\
 $solidity\
 $jobs\
-$fill\
-$os\
-$memory_usage\
-$cmd_duration\
-$time\
-$line_break\
 $character"""
+
+right_format = """$cmd_duration$time"""
 
 
 
 [username]
-style_user = 'fg:blue bold'
-style_root = 'fg:red bold'
-format = '[lexnaid]($style) '
-disabled = false
-show_always = true
+disabled = true
 
 [directory]
 style = 'fg:cyan bold'
-format = '[$path]($style)[$read_only]($read_only_style) '
+format = '[∧]($style) [$path]($style)[$read_only]($read_only_style) '
 truncation_length = 3
 truncation_symbol = '…/'
 read_only = ' 󰌾'
@@ -76,8 +67,8 @@ disabled = false
 
 [git_branch]
 style = 'fg:green'
-symbol = '󰊢'
-format = '[on](white) [$symbol$branch ]($style)'
+symbol = '¥ '
+format = '[$symbol$branch ]($style)'
 
 [git_status]
 style = 'fg:red'
@@ -349,4 +340,4 @@ error_symbol = '[❯](bold red)'
 vimcmd_symbol = '[❮](bold yellow)'
 
 [line_break]
-disabled = false
+disabled = true
