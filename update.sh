@@ -54,6 +54,10 @@ mkdir -p "$backup_dir"
 [[ -f "starship/starship.toml" ]] && cp starship/starship.toml "$backup_dir/"
 [[ -d "github-copilot" ]] && cp -r github-copilot "$backup_dir/"
 [[ -d "gh" ]] && cp -r gh "$backup_dir/"
+[[ -f "fish/config.fish" ]] && cp fish/config.fish "$backup_dir/"
+[[ -f "kitty/kitty.conf" ]] && cp kitty/kitty.conf "$backup_dir/"
+[[ -d "hypr" ]] && cp -r hypr "$backup_dir/"
+[[ -d "hyde/themes" ]] && cp -r hyde/themes "$backup_dir/"
 
 echo -e "${BLUE}🔄 Actualizando configuraciones...${NC}"
 
@@ -84,6 +88,21 @@ update_config "$HOME/.config/github-copilot" "github-copilot" "GitHub Copilot"
 
 # Actualizar GitHub CLI
 update_config "$HOME/.config/gh" "gh" "GitHub CLI"
+
+# Actualizar Fish
+mkdir -p "fish"
+update_config "$HOME/.config/fish/config.fish" "fish" "Fish"
+
+# Actualizar Kitty
+mkdir -p "kitty"
+update_config "$HOME/.config/kitty/kitty.conf" "kitty" "Kitty"
+
+# Actualizar Hyprland
+update_config "$HOME/.config/hypr" "hypr" "Hyprland"
+
+# Actualizar HyDE themes
+mkdir -p "hyde/themes"
+update_config "$HOME/.config/hyde/themes" "hyde/themes" "HyDE Themes"
 
 # Mostrar diferencias si git está inicializado
 if [[ -d ".git" ]]; then
