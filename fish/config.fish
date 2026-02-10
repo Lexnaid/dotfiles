@@ -44,3 +44,9 @@ set -gx LESS_TERMCAP_us (printf '\e[1;4;31m')
 
 # Path additions (if needed)
 fish_add_path ~/.local/bin
+
+# Generated for envman. Do not edit.
+test -s ~/.config/envman/load.fish; and source ~/.config/envman/load.fish
+
+# Bootdev Path
+fish_add_path ~/go/bin

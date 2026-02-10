@@ -1,7 +1,0 @@
-{
-    "github.com:Iv1.b507a08c87ecfe98": {
-        "user": "${GITHUB_USERNAME}",
-        "oauth_token": "${GITHUB_COPILOT_TOKEN}",
-        "githubAppId": "Iv1.b507a08c87ecfe98"
-    }
-}
